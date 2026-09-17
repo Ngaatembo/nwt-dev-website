@@ -201,10 +201,31 @@
   .p-name{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; }
   .p-tag{ color:var(--ink-faint); font-size:13px; text-transform:uppercase; letter-spacing:0.06em; margin-top:3px; }
   .p-desc{ color:var(--ink-muted); font-size:14.5px; margin-top:6px; max-width:46ch; }
-  .p-cat{ color:var(--ink-muted); font-size:14px; white-space:nowrap; text-align:right; }
+  .p-cat{ color:var(--ink-muted); font-size:14px; white-space:nowrap; text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+  .p-live{ font-size:11.5px; color:#8FD4A8; font-weight:500; }
+
+  .featured{
+    display:grid; grid-template-columns:1.3fr 0.7fr; gap:40px; align-items:center;
+    border:1px solid var(--line); border-radius:var(--radius-lg);
+    background:linear-gradient(155deg, var(--panel-strong), var(--panel));
+    padding:40px; margin-bottom:32px; position:relative; overflow:hidden;
+  }
+  .featured-tag{
+    font-size:12.5px; color:var(--ink-faint); font-weight:600; margin-bottom:10px;
+  }
+  .featured h3{ font-size:24px; margin-bottom:12px; }
+  .featured p{ color:var(--ink-muted); font-size:15.5px; line-height:1.65; margin:0 0 20px; max-width:52ch; }
+  .featured-link{ display:inline-flex; }
+  .featured-visual{ display:flex; align-items:center; justify-content:center; }
+  .featured-visual svg{ width:120px; height:120px; }
+  @media (max-width:760px){
+    .featured{ grid-template-columns:1fr; padding:30px; }
+    .featured-visual{ order:-1; }
+    .featured-visual svg{ width:80px; height:80px; }
+  }
   @media (max-width:640px){
     .p-row{ grid-template-columns:56px 1fr; }
-    .p-cat{ grid-column:2; text-align:left; margin-top:4px; }
+    .p-cat{ grid-column:2; text-align:left; margin-top:4px; align-items:flex-start; }
     .p-icon{ width:48px; height:48px; }
     .p-icon svg{ width:22px; height:22px; }
   }
@@ -238,7 +259,7 @@
   .contact-panel h2{ font-size:clamp(26px,4vw,38px); max-width:16ch; }
   .contact-panel p{ color:var(--ink-muted); font-size:16.5px; max-width:48ch; margin:0; }
   .contact-actions{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:8px; }
-  .contact-meta{ color:var(--ink-faint); font-size:14px; }
+  .contact-meta{ color:var(--ink-faint); font-size:14px; display:block; margin-top:2px; }
 
   /* ---------- Footer ---------- */
   footer{ border-top:1px solid var(--line); padding:44px 0; }
@@ -389,9 +410,30 @@
         <h2>Selected work</h2>
         <p>A few of the systems currently running.</p>
       </div>
+
+      <div class="featured">
+        <div class="featured-text">
+          <div class="featured-tag">Featured build</div>
+          <h3>Con Z Connect</h3>
+          <p>A construction logistics marketplace matching customers with tipper truck drivers across Zimbabwe. Built with escrow-based payments, a driver verification and ratings system, live GPS delivery tracking, and a full dispute-resolution flow — not just a booking form.</p>
+          <a href="https://conz.co.zw" target="_blank" rel="noopener" class="btn btn-ghost featured-link">Visit conz.co.zw</a>
+        </div>
+        <div class="featured-visual"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="g7" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4C8DFF"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient></defs>
+    
+    <path d="M3 16V8a1 1 0 0 1 1-1h9v9" stroke="url(#g7)" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M13 10h4l3 3v3h-7" stroke="url(#g7)" stroke-width="1.3" stroke-linejoin="round"/>
+    <circle cx="7" cy="18" r="1.8" stroke="url(#g7)" stroke-width="1.2"/>
+    <circle cx="17.5" cy="18" r="1.8" stroke="url(#g7)" stroke-width="1.2"/>
+
+    </svg></div>
+      </div>
+
       <div class="portfolio-list">
 
-        <a class="p-row" href="#contact">
+        <a class="p-row" href="https://culturesresort.co.zw" target="_blank" rel="noopener">
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs><linearGradient id="g1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#4C8DFF"/><stop offset="1" stop-color="#8B5CF6"/>
@@ -404,10 +446,29 @@
 
     </svg></div>
           <div>
-            <div class="p-name">Kachers Resort</div>
-            <div class="p-desc">A booking-ready web presence for a hospitality business.</div>
+            <div class="p-name">Cultures Resort</div>
+            <div class="p-desc">Website and online ordering for a traditional African restaurant in Harare.</div>
           </div>
-          <div class="p-cat">Hospitality</div>
+          <div class="p-cat">Hospitality<span class="p-live">Live · culturesresort.co.zw</span></div>
+        </a>
+
+        <a class="p-row" href="https://venmax.co.zw" target="_blank" rel="noopener">
+          <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="g6" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4C8DFF"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient></defs>
+    
+    <path d="M4 15V10.5a1.2 1.2 0 0 1 .9-1.16L7 8.8l1.3-2.4A1.6 1.6 0 0 1 9.7 5.6h4.6a1.6 1.6 0 0 1 1.4.8L17 8.8l2.1.54A1.2 1.2 0 0 1 20 10.5V15" stroke="url(#g6)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M4 15h16v2.2a.8.8 0 0 1-.8.8h-1.4a.8.8 0 0 1-.8-.8V16H7v1.2a.8.8 0 0 1-.8.8H4.8a.8.8 0 0 1-.8-.8Z" stroke="url(#g6)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="8" cy="12.4" r="0.9" fill="url(#g6)"/>
+    <circle cx="16" cy="12.4" r="0.9" fill="url(#g6)"/>
+
+    </svg></div>
+          <div>
+            <div class="p-name">VenMax Car Rental &amp; Tours</div>
+            <div class="p-desc">Fleet, pricing and booking site for a car rental and tours business in Harare.</div>
+          </div>
+          <div class="p-cat">Car Rental &amp; Tours<span class="p-live">Live · venmax.co.zw</span></div>
         </a>
 
         <a class="p-row" href="#contact">
@@ -425,25 +486,6 @@
             <div class="p-desc">A digital presence for an events and business services company.</div>
           </div>
           <div class="p-cat">Events</div>
-        </a>
-
-        <a class="p-row" href="#contact">
-          <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#4C8DFF"/><stop offset="1" stop-color="#8B5CF6"/>
-    </linearGradient></defs>
-    
-    <path d="M3 16V8a1 1 0 0 1 1-1h9v9" stroke="url(#g3)" stroke-width="1.6" stroke-linejoin="round"/>
-    <path d="M13 10h4l3 3v3h-7" stroke="url(#g3)" stroke-width="1.6" stroke-linejoin="round"/>
-    <circle cx="7" cy="18" r="1.8" stroke="url(#g3)" stroke-width="1.5"/>
-    <circle cx="17.5" cy="18" r="1.8" stroke="url(#g3)" stroke-width="1.5"/>
-
-    </svg></div>
-          <div>
-            <div class="p-name">Consi</div>
-            <div class="p-desc">A marketplace connecting customers with logistics providers.</div>
-          </div>
-          <div class="p-cat">Logistics Marketplace</div>
         </a>
 
         <a class="p-row" href="#contact">
@@ -512,8 +554,9 @@
         <p>Tell us what you're building. Most projects start with a short conversation, not a form.</p>
         <div class="contact-actions">
           <a href="mailto:hello@nwtdev.co.zw" class="btn btn-primary">Email us</a>
-          <span class="contact-meta">hello@nwtdev.co.zw &nbsp;·&nbsp; Based in Zimbabwe</span>
+          <a href="https://wa.me/263780511822" class="btn btn-ghost">WhatsApp</a>
         </div>
+        <span class="contact-meta">hello@nwtdev.co.zw &nbsp;·&nbsp; +263 78 051 1822 &nbsp;·&nbsp; Marondera, Zimbabwe</span>
       </div>
     </div>
   </section>
