@@ -515,3 +515,5 @@
     .sticky-cta .btn{ flex:1; padding:12px 10px; }
     body{ padding-bottom:72px; }
   }
+  .contact-meta a, .footer-direct a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+  .contact-meta a:hover, .footer-direct a:hover{ color:var(--ink); }
