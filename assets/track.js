@@ -8,6 +8,7 @@
     adsLeadLabel: ''    // conversion label for form leads, e.g. 'AbC-D_efG-h12345'
   };
   var WHATSAPP = '263780511822';
+  var WEB3FORMS_KEY = '9a70ef2e-12ea-4db9-a2a6-55ab6b284713'; // public key; delivers to the site owner's email
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -70,12 +71,44 @@
         status.setAttribute('role', 'status');
         form.appendChild(status);
       }
+      var btn = form.querySelector('button[type="submit"]');
+      var btnText = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+      status.textContent = '';
+
       var wa = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(subject + '\n\n' + body);
-      status.innerHTML = 'Thanks — your email app should open with your message ready to send. ' +
-        'If it doesn\u2019t, <a href="' + wa + '" target="_blank" rel="noopener">send it on WhatsApp instead</a>.';
-      try { sessionStorage.setItem('nwt_lead', JSON.stringify({ text: subject + '\n\n' + body })); } catch (err) {}
-      window.location.href = 'mailto:ngaatendwew@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      setTimeout(function () { window.location.href = '/thank-you'; }, 1000);
+      var payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: subject,
+        from_name: 'NWT Dev Website',
+        name: f.get('name') || '',
+        message: body,
+        botcheck: ''
+      };
+      if (f.get('email')) payload.email = f.get('email');
+
+      function fallback() {
+        // Could not send automatically: open the email app and offer WhatsApp. No thank-you redirect.
+        if (btn) { btn.disabled = false; btn.textContent = btnText; }
+        status.innerHTML = 'We couldn\u2019t send that automatically. Your email app should open with your message ready to send, or ' +
+          '<a href="' + wa + '" target="_blank" rel="noopener">send it on WhatsApp instead</a>.';
+        window.location.href = 'mailto:ngaatendwew@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function (r) { return r.json(); }).then(function (res) {
+        clearTimeout(timer);
+        if (res && res.success) {
+          try { sessionStorage.setItem('nwt_lead', JSON.stringify({ text: subject + '\n\n' + body })); } catch (err) {}
+          window.location.href = '/thank-you';
+        } else { fallback(); }
+      }).catch(function () { clearTimeout(timer); fallback(); });
     });
   });
   document.querySelectorAll('.tag-btn').forEach(function (b) {
