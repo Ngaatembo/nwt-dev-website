@@ -1,25 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VenMax Car Rental &amp; Tours — Case Study | NWT Dev</title>
-<meta name="description" content="How NWT Dev built a fleet, pricing and enquiry-focused website for VenMax Car Rental & Tours, a car rental and tours business in Harare, Zimbabwe.">
-<link rel="canonical" href="https://nwt-dev-website.ngaatendwew.workers.dev/venmax-case-study.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="VenMax Car Rental & Tours — Case Study | NWT Dev">
-<meta property="og:description" content="How NWT Dev built a fleet, pricing and enquiry-focused website for VenMax Car Rental & Tours, a car rental and tours business in Harare, Zimbabwe.">
-<meta property="og:url" content="https://nwt-dev-website.ngaatendwew.workers.dev/venmax-case-study.html">
-<meta property="og:site_name" content="NWT Dev">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VenMax Car Rental & Tours — Case Study | NWT Dev">
-<meta name="twitter:description" content="How NWT Dev built a fleet, pricing and enquiry-focused website for VenMax Car Rental & Tours, a car rental and tours business in Harare, Zimbabwe.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0A12%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%238B5CF6%22 font-family=%22sans-serif%22 font-weight=%22800%22>N</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
+:root{
     --bg:#0B0A12;
     --bg-elev:#14121F;
     --panel:rgba(255,255,255,0.045);
@@ -438,7 +417,7 @@
 
   /* ---------- Footer ---------- */
   footer{ border-top:1px solid var(--line); padding:56px 0 0; }
-  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:40px; }
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; }
   @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr; gap:32px; } }
   .footer-col{ display:flex; flex-direction:column; gap:10px; }
   .footer-col a{ color:var(--ink-muted); text-decoration:none; font-size:14px; transition:color .15s ease; }
@@ -510,199 +489,29 @@
 
   ::selection{ background:rgba(139,92,246,0.35); color:#fff; }
 
-  /* ---------- Case study page ---------- */
-  .cs-hero{ padding:150px 0 56px; }
-  .cs-back{ display:inline-flex; align-items:center; gap:6px; color:var(--ink-faint); text-decoration:none; font-size:13.5px; margin-bottom:22px; }
-  .cs-back:hover{ color:var(--ink); }
-  .cs-tag{ font-size:12.5px; color:var(--ink-faint); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px; }
-  .cs-hero h1{ font-size:clamp(30px,4.6vw,46px); line-height:1.12; max-width:18ch; }
-  .cs-hero-sub{ color:var(--ink-muted); font-size:17px; max-width:56ch; margin-top:18px; line-height:1.65; }
-  .cs-hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
-  .cs-logo-panel{
-    margin-top:44px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--panel-strong);
-    display:flex; align-items:center; justify-content:center; padding:44px; overflow:hidden;
+  /* ---------- Ads-ready additions ---------- */
+  .hero-kicker{ font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:var(--ink-muted); margin:0 0 14px; }
+  .hero-contact{ margin:22px 0 0; color:var(--ink-faint); font-size:14px; }
+  .hero-contact a{ color:var(--ink-muted); text-underline-offset:2px; }
+  .hero-contact a:hover{ color:var(--ink); }
+  .section-cta{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:36px; }
+  .section-cta p{ margin:0; color:var(--ink-muted); font-size:15px; }
+  .svc-links-head{ margin:52px 0 0; font-size:20px; }
+  .svc-links{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+  @media (max-width:900px){ .svc-links{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .svc-links{ grid-template-columns:1fr; } }
+  .svc-link{ display:block; text-decoration:none; padding:18px 20px; border:1px solid var(--line); border-radius:var(--radius-md); background:var(--panel); transition:border-color .18s ease, background .18s ease; }
+  .svc-link:hover{ border-color:rgba(255,255,255,0.22); background:var(--panel-strong); }
+  .svc-link strong{ display:block; font-family:'Bricolage Grotesque',sans-serif; font-size:16.5px; margin-bottom:4px; }
+  .svc-link span{ color:var(--ink-muted); font-size:13.8px; line-height:1.5; }
+  .crumb{ font-size:13.5px; color:var(--ink-faint); margin:0 0 16px; }
+  .crumb a{ color:var(--ink-muted); text-decoration:none; }
+  .crumb a:hover{ color:var(--ink); }
+  .form-status{ margin:4px 0 0; font-size:14px; color:#8FD4A8; }
+  .form-status a{ color:var(--ink); }
+  .sticky-cta{ display:none; }
+  @media (max-width:820px){
+    .sticky-cta{ display:flex; gap:10px; position:fixed; left:0; right:0; bottom:0; z-index:90; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:rgba(11,10,18,0.92); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border-top:1px solid var(--line); }
+    .sticky-cta .btn{ flex:1; padding:12px 10px; }
+    body{ padding-bottom:72px; }
   }
-  .cs-logo-panel img{ width:100%; max-width:280px; height:auto; object-fit:contain; }
-  .cs-meta-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:36px; }
-  @media (max-width:820px){ .cs-meta-grid{ grid-template-columns:repeat(2,1fr); } }
-  .cs-meta-item{ border:1px solid var(--line); background:var(--panel); border-radius:var(--radius-md); padding:20px; }
-  .cs-meta-label{ font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; }
-  .cs-meta-value{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:15.5px; }
-  .cs-section{ padding:64px 0; }
-  .cs-section h2{ font-size:clamp(22px,3vw,30px); margin-bottom:16px; }
-  .cs-section p{ color:var(--ink-muted); font-size:16px; line-height:1.75; max-width:66ch; margin:0 0 16px; }
-  .cs-list{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; max-width:66ch; }
-  .cs-list li{ display:flex; gap:12px; align-items:flex-start; color:var(--ink-muted); font-size:15px; line-height:1.6; }
-  .cs-list li span.mark{ flex-shrink:0; width:22px; height:22px; border-radius:6px; background:rgba(139,92,246,0.18); color:var(--violet); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; margin-top:2px; }
-  .cs-fleet-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
-  @media (max-width:900px){ .cs-fleet-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:560px){ .cs-fleet-grid{ grid-template-columns:1fr; } }
-  .cs-fleet-card{ border:1px solid var(--line); background:var(--panel); border-radius:var(--radius-md); padding:18px 20px; }
-  .cs-fleet-name{ font-weight:600; font-size:14.5px; margin-bottom:4px; }
-  .cs-fleet-price{ color:var(--ink-faint); font-size:13px; }
-  .cs-cta-panel{
-    border:1px solid var(--line); border-radius:var(--radius-lg);
-    background:linear-gradient(160deg, var(--panel-strong), var(--panel));
-    padding:48px; text-align:left; margin-top:12px;
-  }
-  .cs-cta-panel h3{ font-size:24px; margin-bottom:12px; max-width:22ch; }
-  .cs-cta-panel p{ color:var(--ink-muted); font-size:15.5px; max-width:52ch; margin:0 0 22px; }
-</style>
-</head>
-<body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/nwt-dev-logo-120.png" alt="NWT Dev">
-      <span>NWT DEV</span>
-    </a>
-    <nav class="links">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-    <a href="index.html#demo" class="btn btn-primary" id="navCtaDesktop" data-track="cta_click" data-track-label="cs_nav_demo">Request a Free Demo</a>
-    <a href="index.html#demo" class="btn btn-primary mobile-cta" data-track="cta_click" data-track-label="cs_nav_demo_mobile">Free demo</a>
-  </div>
-</header>
-
-<main>
-  <section class="cs-hero">
-    <div class="wrap">
-      <a href="index.html#work" class="cs-back">&larr; Back to NWT Dev</a>
-      <div class="cs-tag">Case Study &middot; Live Client Project</div>
-      <h1>VenMax Car Rental &amp; Tours</h1>
-      <p class="cs-hero-sub">A fleet, pricing and enquiry-focused website for a car rental and tours business in Harare — built to turn browsers into WhatsApp bookings.</p>
-      <div class="cs-hero-actions">
-        <a href="https://venmax.co.zw" target="_blank" rel="noopener" class="btn btn-primary">Visit live site &#8599;</a>
-        <a href="index.html#demo" class="btn btn-ghost" data-track="cta_click" data-track-label="cs_similar_project">Start a similar project</a>
-      </div>
-
-      <div class="cs-logo-panel">
-        <img src="assets/venmax-logo.png" alt="VenMax Car Rental &amp; Tours logo">
-      </div>
-
-      <div class="cs-meta-grid">
-        <div class="cs-meta-item">
-          <div class="cs-meta-label">Client</div>
-          <div class="cs-meta-value">VenMax Car Rental &amp; Tours</div>
-        </div>
-        <div class="cs-meta-item">
-          <div class="cs-meta-label">Location</div>
-          <div class="cs-meta-value">Harare, Zimbabwe</div>
-        </div>
-        <div class="cs-meta-item">
-          <div class="cs-meta-label">Industry</div>
-          <div class="cs-meta-value">Car Rental &amp; Tours</div>
-        </div>
-        <div class="cs-meta-item">
-          <div class="cs-meta-label">Status</div>
-          <div class="cs-meta-value">Live &middot; venmax.co.zw</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="cs-section">
-    <div class="wrap">
-      <h2>The challenge</h2>
-      <p>VenMax offers airport transfers, self-drive hire and chauffeur services from a fleet ranging from hybrid sedans to premium 4x4s. Before this site, most of that information — pricing, fleet options, hire terms and how to actually book — lived scattered across social media, making it hard for customers to get a clear picture or reach the team quickly.</p>
-      <p>The brief was straightforward: a professional site that presents the real fleet and pricing clearly, explains the self-drive terms up front, and gets a customer from "browsing" to a WhatsApp or call enquiry in as few steps as possible.</p>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="cs-section">
-    <div class="wrap">
-      <h2>What we built</h2>
-      <p>A responsive site built around the client's real assets — logo, office and fleet photography, and current pricing — rather than stock content or placeholders.</p>
-      <ul class="cs-list">
-        <li><span class="mark">&#10003;</span>Full fleet listing across self-drive, chauffeur and airport-transfer categories, with daily rates and deposit amounts kept current</li>
-        <li><span class="mark">&#10003;</span>Clear self-drive hire terms (license, ID, proof of residence, mileage allowance) shown up front to cut down on back-and-forth enquiries</li>
-        <li><span class="mark">&#10003;</span>Multiple direct contact paths — WhatsApp, phone and email — so a customer can reach VenMax the way they prefer</li>
-        <li><span class="mark">&#10003;</span>Free airport pickup and free Harare vehicle delivery called out as a differentiator</li>
-        <li><span class="mark">&#10003;</span>Built and shipped on a lean budget, without unnecessary tooling or ongoing platform costs</li>
-      </ul>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="cs-section">
-    <div class="wrap">
-      <h2>The fleet, at a glance</h2>
-      <p>From economical hybrids to premium 4x4s — each listed with transparent daily pricing and deposit requirements.</p>
-      <div class="cs-fleet-grid">
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Nissan Note Hybrid</div><div class="cs-fleet-price">$40/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Toyota Aqua Hybrid</div><div class="cs-fleet-price">$40/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Honda Fit Hybrid</div><div class="cs-fleet-price">$45/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Nissan X-Trail T31</div><div class="cs-fleet-price">$55/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Nissan Serena C27 Hybrid</div><div class="cs-fleet-price">$70/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Mazda CX-5</div><div class="cs-fleet-price">$80/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Toyota D4D</div><div class="cs-fleet-price">$130/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Toyota Fortuner GD6</div><div class="cs-fleet-price">From $170/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Toyota Prado</div><div class="cs-fleet-price">$400/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Range Rover Sport</div><div class="cs-fleet-price">$400/day</div></div>
-        <div class="cs-fleet-card"><div class="cs-fleet-name">Toyota Land Cruiser</div><div class="cs-fleet-price">$700/day</div></div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="cs-section">
-    <div class="wrap">
-      <h2>Result</h2>
-      <p>VenMax now has a single, professional destination that reflects the quality of the business — live at <a href="https://venmax.co.zw" target="_blank" rel="noopener" style="color:var(--blue);">venmax.co.zw</a> — where customers can see the full fleet, understand pricing and terms at a glance, and reach the team directly to book.</p>
-
-      <div class="cs-cta-panel">
-        <h3>Want a site like this for your business?</h3>
-        <p>If your business has outgrown a social media page and needs a proper digital home — clear pricing, a real path to enquire, and a design that matches how serious your business actually is — let's talk.</p>
-        <a href="index.html#demo" class="btn btn-primary" data-track="cta_click" data-track-label="cs_bottom_demo">Request a Free Demo</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div class="footer-col footer-brand-col">
-      <div class="footer-brand">
-        <img src="assets/nwt-dev-logo-120.png" alt="NWT Dev">
-        <span>NWT DEV</span>
-      </div>
-      <p class="footer-desc">We design and build websites, custom platforms and digital systems that help businesses attract customers, streamline operations and grow.</p>
-      <p class="footer-loc">Based in Marondera, Zimbabwe · Engineering solutions for Zimbabwean businesses</p>
-    </div>
-    <div class="footer-col">
-      <div class="footer-heading">Navigation</div>
-      <a href="index.html#top">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#work">Our Work</a>
-      <a href="index.html#how-we-work">How We Work</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-heading">Engage</div>
-      <a href="index.html#contact" class="footer-cta">Start a Project</a>
-      <p class="footer-direct">Direct: ngaatendwew@gmail.com</p>
-      <div class="availability-badge"><span class="dot"></span>Available for new projects</div>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <div class="copyright">&copy; 2026 NWT Dev. All rights reserved. Digital solutions, built to last.</div>
-  </div>
-</footer>
-
-<script src="assets/track.js" defer></script>
-</body>
-</html>
