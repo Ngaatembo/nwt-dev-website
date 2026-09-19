@@ -26,7 +26,7 @@
     params.page_path = location.pathname;
     window.dataLayer.push({ event: name, ...params });
     if (CONFIG.ga4Id || CONFIG.adsId) gtag('event', name, params);
-    if (name === 'generate_lead' && CONFIG.adsId && CONFIG.adsLeadLabel) {
+    if (name === 'lead_thank_you' && CONFIG.adsId && CONFIG.adsLeadLabel) {
       gtag('event', 'conversion', { send_to: CONFIG.adsId + '/' + CONFIG.adsLeadLabel });
     }
   }
@@ -73,7 +73,9 @@
       var wa = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(subject + '\n\n' + body);
       status.innerHTML = 'Thanks — your email app should open with your message ready to send. ' +
         'If it doesn\u2019t, <a href="' + wa + '" target="_blank" rel="noopener">send it on WhatsApp instead</a>.';
+      try { sessionStorage.setItem('nwt_lead', JSON.stringify({ text: subject + '\n\n' + body })); } catch (err) {}
       window.location.href = 'mailto:ngaatendwew@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      setTimeout(function () { window.location.href = '/thank-you'; }, 1000);
     });
   });
   document.querySelectorAll('.tag-btn').forEach(function (b) {
