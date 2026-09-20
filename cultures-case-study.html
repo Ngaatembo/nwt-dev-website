@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cultures Resort — Case Study | NWT Dev</title>
+<meta name="description" content="How NWT Dev built an ordering, events and admin-managed website for Cultures Resort, a traditional African restaurant in Harare, Zimbabwe.">
+<link rel="canonical" href="https://nwt-dev-website.ngaatendwew.workers.dev/cultures-case-study.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cultures Resort — Case Study | NWT Dev">
+<meta property="og:description" content="How NWT Dev built an ordering, events and admin-managed website for Cultures Resort, a traditional African restaurant in Harare, Zimbabwe.">
+<meta property="og:url" content="https://nwt-dev-website.ngaatendwew.workers.dev/cultures-case-study.html">
+<meta property="og:site_name" content="NWT Dev">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cultures Resort — Case Study | NWT Dev">
+<meta name="twitter:description" content="How NWT Dev built an ordering, events and admin-managed website for Cultures Resort, a traditional African restaurant in Harare, Zimbabwe.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0A12%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%238B5CF6%22 font-family=%22sans-serif%22 font-weight=%22800%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0A12;
+    --bg-elev:#14121F;
+    --panel:rgba(255,255,255,0.045);
+    --panel-strong:rgba(255,255,255,0.07);
+    --line:rgba(255,255,255,0.10);
+    --ink:#F4F2FA;
+    --ink-muted:#A7A2BE;
+    --ink-faint:#716C8A;
+    --blue:#4C8DFF;
+    --violet:#8B5CF6;
+    --pink-glow:#FF9CE8;
+    --grad: linear-gradient(120deg, var(--blue), var(--violet));
+    --radius-lg:20px;
+    --radius-md:14px;
+    --maxw:1180px;
+  }
+
+  /* Theme-aware token redefinition (site ships one intentional dark identity) */
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B0A12; --bg-elev:#14121F; --ink:#F4F2FA; --ink-muted:#A7A2BE;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B0A12; --bg-elev:#14121F; --ink:#F4F2FA; --ink-muted:#A7A2BE;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Bricolage Grotesque','Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(11,10,18,0.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand img{ height:30px; width:auto; }
+  .brand span{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; letter-spacing:0.01em; color:var(--ink); }
+  nav.links{ display:flex; align-items:center; gap:30px; }
+  nav.links a{
+    text-decoration:none; color:var(--ink-muted); font-size:14.5px; font-weight:500;
+    transition:color .18s ease;
+  }
+  nav.links a:hover{ color:var(--ink); }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 20px; border-radius:999px; font-size:14.5px; font-weight:600;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    font-family:'Inter',sans-serif;
+  }
+  .btn-primary{ background:var(--grad); color:#0B0A12; }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 24px rgba(139,92,246,0.35); }
+  .btn-ghost{ background:transparent; border-color:var(--line); color:var(--ink); }
+  .btn-ghost:hover{ border-color:rgba(255,255,255,0.3); background:var(--panel); }
+  .btn:focus-visible{ outline:2px solid var(--blue); outline-offset:2px; }
+  .mobile-cta{ display:none; }
+  #navCtaDesktop{ display:inline-flex; }
+  @media (max-width:820px){
+    nav.links{ display:none; }
+    .mobile-cta{ display:inline-flex; }
+    #navCtaDesktop{ display:none; }
+  }
+
+  section{ padding:88px 0; }
+  .divider{ height:1px; background:var(--line); border:none; margin:0; }
+
+  ::selection{ background:rgba(139,92,246,0.35); color:#fff; }
+
+  /* ---------- Case study page ---------- */
+  .cs-hero{ padding:150px 0 56px; }
+  .cs-back{ display:inline-flex; align-items:center; gap:6px; color:var(--ink-faint); text-decoration:none; font-size:13.5px; margin-bottom:22px; }
+  .cs-back:hover{ color:var(--ink); }
+  .cs-tag{ font-size:12.5px; color:var(--ink-faint); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px; }
+  .cs-hero h1{ font-size:clamp(30px,4.6vw,46px); line-height:1.12; max-width:18ch; }
+  .cs-hero-sub{ color:var(--ink-muted); font-size:17px; max-width:56ch; margin-top:18px; line-height:1.65; }
+  .cs-hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+  .cs-logo-panel{
+    margin-top:44px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--panel-strong);
+    display:flex; align-items:center; justify-content:center; padding:44px; overflow:hidden;
+  }
+  .cs-logo-panel img{ width:100%; max-width:280px; height:auto; object-fit:contain; }
+  .cs-meta-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:36px; }
+  @media (max-width:820px){ .cs-meta-grid{ grid-template-columns:repeat(2,1fr); } }
+  .cs-meta-item{ border:1px solid var(--line); background:var(--panel); border-radius:var(--radius-md); padding:20px; }
+  .cs-meta-label{ font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; }
+  .cs-meta-value{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:15.5px; }
+  .cs-section{ padding:64px 0; }
+  .cs-section h2{ font-size:clamp(22px,3vw,30px); margin-bottom:16px; }
+  .cs-section p{ color:var(--ink-muted); font-size:16px; line-height:1.75; max-width:66ch; margin:0 0 16px; }
+  .cs-list{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; max-width:66ch; }
+  .cs-list li{ display:flex; gap:12px; align-items:flex-start; color:var(--ink-muted); font-size:15px; line-height:1.6; }
+  .cs-list li span.mark{ flex-shrink:0; width:22px; height:22px; border-radius:6px; background:rgba(139,92,246,0.18); color:var(--violet); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; margin-top:2px; }
+  .cs-feature-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+  @media (max-width:900px){ .cs-feature-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .cs-feature-grid{ grid-template-columns:1fr; } }
+  .cs-feature-card{ border:1px solid var(--line); background:var(--panel); border-radius:var(--radius-md); padding:18px 20px; }
+  .cs-feature-name{ font-weight:600; font-size:14.5px; margin-bottom:4px; }
+  .cs-feature-desc{ color:var(--ink-faint); font-size:13px; line-height:1.5; }
+  .cs-cta-panel{
+    border:1px solid var(--line); border-radius:var(--radius-lg);
+    background:linear-gradient(160deg, var(--panel-strong), var(--panel));
+    padding:48px; text-align:left; margin-top:12px;
+  }
+  .cs-cta-panel h3{ font-size:24px; margin-bottom:12px; max-width:22ch; }
+  .cs-cta-panel p{ color:var(--ink-muted); font-size:15.5px; max-width:52ch; margin:0 0 22px; }
+
+  /* ---------- Footer ---------- */
+  footer{ border-top:1px solid var(--line); padding:56px 0 0; }
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:40px; }
+  @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr; gap:32px; } }
+  .footer-col{ display:flex; flex-direction:column; gap:10px; }
+  .footer-col a{ color:var(--ink-muted); text-decoration:none; font-size:14px; transition:color .15s ease; }
+  .footer-col a:hover{ color:var(--ink); }
+  .footer-heading{ font-size:12px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:6px; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+  .footer-brand img{ height:24px; }
+  .footer-brand span{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:15px; }
+  .footer-desc{ color:var(--ink-muted); font-size:13.8px; line-height:1.6; margin:0; max-width:38ch; }
+  .footer-loc{ color:var(--ink-faint); font-size:12.5px; margin:8px 0 0; }
+  .footer-cta{ color:var(--ink) !important; font-weight:600; }
+  .footer-direct{ color:var(--ink-muted); font-size:13.5px; margin:4px 0 0; }
+  .footer-direct a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+  .footer-direct a:hover{ color:#fff; }
+  .availability-badge{
+    display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#8FD4A8;
+    background:rgba(143,212,168,0.1); border:1px solid rgba(143,212,168,0.25); border-radius:999px;
+    padding:6px 12px; margin-top:8px; width:fit-content;
+  }
+  .availability-badge .dot{ width:6px; height:6px; border-radius:50%; background:#8FD4A8; }
+  .footer-bottom{ border-top:1px solid var(--line); padding:20px 0; }
+  .footer-bottom .copyright{ color:var(--ink-faint); font-size:13px; text-align:center; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/nwt-dev-logo-120.png" alt="NWT Dev">
+      <span>NWT DEV</span>
+    </a>
+    <nav class="links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#demo" class="btn btn-primary" id="navCtaDesktop" data-track="cta_click" data-track-label="cs_nav_demo">Request a Free Demo</a>
+    <a href="index.html#demo" class="btn btn-primary mobile-cta" data-track="cta_click" data-track-label="cs_nav_demo_mobile">Free demo</a>
+  </div>
+</header>
+
+<main>
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html#work" class="cs-back">&larr; Back to NWT Dev</a>
+      <div class="cs-tag">Case Study &middot; Live Client Project</div>
+      <h1>Cultures Resort</h1>
+      <p class="cs-hero-sub">An ordering, events and admin-managed website for a traditional African restaurant in Harare — replacing phone and WhatsApp as the only way to reach the business.</p>
+      <div class="cs-hero-actions">
+        <a href="https://culturesresort.co.zw" target="_blank" rel="noopener" class="btn btn-primary">Visit live site &#8599;</a>
+        <a href="index.html#demo" class="btn btn-ghost" data-track="cta_click" data-track-label="cs_similar_project">Start a similar project</a>
+      </div>
+
+      <div class="cs-logo-panel">
+        <img src="assets/cultures-resort-logo.png" alt="Cultures Resort logo">
+      </div>
+
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Client</div>
+          <div class="cs-meta-value">Cultures Resort</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Location</div>
+          <div class="cs-meta-value">Hillside, Harare</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Industry</div>
+          <div class="cs-meta-value">Restaurant &amp; Catering</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Status</div>
+          <div class="cs-meta-value">Live &middot; culturesresort.co.zw</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>The challenge</h2>
+      <p>Cultures Resort is a family-run traditional African restaurant in Hillside, Harare, established in 2018, known for charcoal-grilled meats and traditional stews, and for hosting weddings, roora ceremonies, birthdays and other functions on top of day-to-day dining. Before this site, every order and every catering enquiry went through phone calls and WhatsApp, with no way to manage them in one place.</p>
+      <p>The brief was to give the restaurant a proper online presence: a way for customers to order and enquire directly, a dedicated space for events and catering, and a back-end the team could actually run the business from — not just a page describing it.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>What we built</h2>
+      <p>A site built around the restaurant's real photography, menu and details — the client specifically wanted authentic photos of the actual venue and food, not stock or AI-generated images.</p>
+      <div class="cs-feature-grid">
+        <div class="cs-feature-card"><div class="cs-feature-name">Online ordering</div><div class="cs-feature-desc">Customers can order directly instead of relying on a phone call</div></div>
+        <div class="cs-feature-card"><div class="cs-feature-name">Events &amp; catering</div><div class="cs-feature-desc">A dedicated page for weddings, roora, birthdays and other functions, hosted on-site or off-site</div></div>
+        <div class="cs-feature-card"><div class="cs-feature-name">Admin dashboard</div><div class="cs-feature-desc">Overview, Orders, Kitchen, Reservations, Enquiries, Menu, Beverages and Events, all in one place</div></div>
+        <div class="cs-feature-card"><div class="cs-feature-name">Secure admin login</div><div class="cs-feature-desc">Authenticated access to the dashboard, so order and enquiry data isn't open to the public</div></div>
+        <div class="cs-feature-card"><div class="cs-feature-name">Reservations</div><div class="cs-feature-desc">A booking flow separate from the events/catering enquiry path</div></div>
+        <div class="cs-feature-card"><div class="cs-feature-name">Real venue &amp; food photography</div><div class="cs-feature-desc">The restaurant's own photos throughout, at the client's request</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Result</h2>
+      <p>Cultures Resort now has a single online home for ordering, reservations and catering enquiries — live at <a href="https://culturesresort.co.zw" target="_blank" rel="noopener" style="color:var(--blue);">culturesresort.co.zw</a> — backed by an admin dashboard the team uses to manage orders, the kitchen queue and enquiries without going back to phone and WhatsApp for everything.</p>
+
+      <div class="cs-cta-panel">
+        <h3>Want a site like this for your business?</h3>
+        <p>If your business has outgrown a social media page and needs a proper digital home — direct ordering, a real path to enquire, and a design that matches how serious your business actually is — let's talk.</p>
+        <a href="index.html#demo" class="btn btn-primary" data-track="cta_click" data-track-label="cs_bottom_demo">Request a Free Demo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand-col">
+      <div class="footer-brand">
+        <img src="assets/nwt-dev-logo-120.png" alt="NWT Dev">
+        <span>NWT DEV</span>
+      </div>
+      <p class="footer-desc">We design and build websites, custom platforms and digital systems that help businesses attract customers, streamline operations and grow.</p>
+      <p class="footer-loc">Based in Marondera, Zimbabwe · Engineering solutions for Zimbabwean businesses</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-heading">Navigation</div>
+      <a href="index.html#top">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Our Work</a>
+      <a href="index.html#how-we-work">How We Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-heading">Engage</div>
+      <a href="index.html#contact" class="footer-cta">Start a Project</a>
+      <p class="footer-direct">Direct: <a href="mailto:ngaatendwew@gmail.com">ngaatendwew@gmail.com</a></p>
+      <div class="availability-badge"><span class="dot"></span>Available for new projects</div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div class="copyright">&copy; 2026 NWT Dev. All rights reserved. Digital solutions, built to last.</div>
+  </div>
+</footer>
+
+<script src="assets/track.js" defer></script>
+</body>
+</html>
