@@ -2,12 +2,13 @@
 
 Static site (home page, six service landing pages under `services/`, one case study) for NWT Dev — a digital solutions company based in Zimbabwe.
 
-Deployed via Cloudflare Pages: no build step needed, this is a self-contained `index.html`.
+Deployed via Cloudflare Workers static assets.
 
-## Cloudflare Pages settings
+## Cloudflare Workers Builds settings
 - Framework preset: None
-- Build command: (leave blank)
-- Build output directory: /
+- Root directory: `/`
+- Build command: `npx wrangler versions upload --assets=. --name=nwt-dev-website --compatibility-date=2026-09-22`
+- Deploy command: `npx wrangler versions upload --assets=. --name=nwt-dev-website --compatibility-date=2026-09-22`
 
 ## Conversion tracking
 `assets/track.js` pushes events to `dataLayer` (`generate_lead`, `click_whatsapp`, `click_phone`, `click_email`, `cta_click`).
