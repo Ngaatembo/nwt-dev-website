@@ -546,6 +546,120 @@
   }
   .contact-meta a, .footer-direct a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
   .contact-meta a:hover, .footer-direct a:hover{ color:var(--ink); }
+
+  /* ---------- WebAura visual identity ---------- */
+  :root{
+    --bg:#050914;
+    --bg-elev:#0A1220;
+    --panel:rgba(255,255,255,.045);
+    --panel-strong:rgba(41,190,255,.08);
+    --line:rgba(126,210,255,.14);
+    --ink:#F7FBFF;
+    --ink-muted:#A9BACB;
+    --ink-faint:#71869A;
+    --blue:#4C8DFF;
+    --violet:#7B61FF;
+    --cyan:#39D8FF;
+    --grad:linear-gradient(120deg,#39D8FF 0%,#4C8DFF 52%,#7B61FF 100%);
+  }
+  body{
+    background:
+      radial-gradient(circle at 82% 8%,rgba(57,216,255,.09),transparent 28rem),
+      radial-gradient(circle at 12% 38%,rgba(76,141,255,.06),transparent 32rem),
+      var(--bg);
+  }
+  header.nav{
+    background:rgba(5,9,20,.78);
+    border-bottom-color:rgba(57,216,255,.13);
+  }
+  .nav-inner{padding-top:12px;padding-bottom:12px}
+  .brand img{height:38px;width:114px;object-fit:contain}
+  .brand span{display:none}
+  .btn-primary{
+    background:var(--grad);
+    color:#03101A;
+    box-shadow:0 10px 30px rgba(57,216,255,.13);
+  }
+  .btn-primary:hover{box-shadow:0 14px 36px rgba(57,216,255,.22)}
+  .hero{
+    min-height:720px;
+    padding:170px 0 105px;
+    display:flex;
+    align-items:center;
+  }
+  .hero::before{
+    width:760px;height:760px;right:-260px;top:-250px;
+    background:radial-gradient(circle,rgba(57,216,255,.16),rgba(76,141,255,.06) 38%,transparent 70%);
+  }
+  .hero-grid{gap:70px}
+  .hero-kicker{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:7px 13px;border:1px solid rgba(57,216,255,.18);
+    border-radius:999px;background:rgba(57,216,255,.055);
+    color:#9EDFFF;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  }
+  .hero-kicker::before{
+    content:'';width:7px;height:7px;border-radius:50%;background:#39D8FF;
+    box-shadow:0 0 14px #39D8FF;
+  }
+  .hero h1{
+    max-width:12ch;
+    font-size:clamp(42px,6vw,72px);
+    line-height:.98;
+    letter-spacing:-.045em;
+  }
+  .hero h1 .accent{color:#59DFFF}
+  .hero p.lead{max-width:58ch;font-size:17px}
+  .hero-visual{
+    border:1px solid rgba(57,216,255,.13);
+    border-radius:30px;
+    padding:28px;
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(57,216,255,.025));
+    box-shadow:inset 0 1px rgba(255,255,255,.06),0 28px 90px rgba(0,0,0,.28);
+  }
+  .hero-visual::after{
+    content:'WEBSITES  •  BUSINESS SYSTEMS  •  DIGITAL SOLUTIONS';
+    position:absolute;left:50%;bottom:13px;transform:translateX(-50%);
+    white-space:nowrap;font-size:9px;letter-spacing:.12em;color:#71869A;
+  }
+  section{padding:100px 0}
+  .section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.035em}
+  .section-head p{max-width:62ch}
+  .bento .card,.p-row,.p-spotlight,.price-card,.process-step,.commitments,.faq-item,.next-panel,.proof-feature,.problem-item{
+    background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(57,216,255,.018));
+    border-color:rgba(126,210,255,.12);
+  }
+  .bento .card:hover,.p-row:hover,.p-spotlight:hover,.price-card:hover,.process-step:hover{
+    border-color:rgba(57,216,255,.3);
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+  }
+  .card-glow{background:radial-gradient(circle,rgba(57,216,255,.20),transparent 70%)}
+  .p-status-live{background:rgba(57,216,255,.10);color:#7FE5FF}
+  .price-featured{
+    border-color:rgba(57,216,255,.35);
+    box-shadow:0 18px 60px rgba(57,216,255,.07);
+  }
+  .price-badge{background:var(--grad)}
+  .demo-panel{
+    background:
+      radial-gradient(circle at 90% 0%,rgba(57,216,255,.12),transparent 32rem),
+      linear-gradient(145deg,rgba(255,255,255,.055),rgba(57,216,255,.02));
+    border-color:rgba(57,216,255,.18);
+  }
+  .contact-panel h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.035em}
+  footer{background:#030711;border-top-color:rgba(57,216,255,.12)}
+  .sticky-cta{background:rgba(3,7,17,.94)}
+  @media(max-width:900px){
+    .hero{min-height:auto}
+    .hero-grid{gap:40px}
+  }
+  @media(max-width:640px){
+    .hero{padding-top:135px}
+    .hero h1{font-size:clamp(39px,12vw,58px)}
+    .hero-visual{padding:14px;border-radius:22px}
+    .hero-visual::after{font-size:7px;letter-spacing:.07em}
+  }
+
 </style>
 </head>
 <body>
@@ -575,9 +689,9 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="hero-kicker fade-up">WebAura</p>
-        <h1 class="fade-up" style="animation-delay:.05s;">Websites &amp; Digital Solutions for Businesses</h1>
-        <p class="lead fade-up" style="animation-delay:.18s;">Digital systems for businesses that run on more than a website. WebAura designs and builds the websites, marketplaces, booking systems and payment tools that Zimbabwean businesses use to actually operate — not just look good online.</p>
+        <p class="hero-kicker fade-up">Websites • Business Systems • Digital Solutions</p>
+        <h1 class="fade-up" style="animation-delay:.05s;">Digital solutions that <span class="accent">move your business forward.</span></h1>
+        <p class="lead fade-up" style="animation-delay:.18s;">WebAura builds modern websites, business systems and digital solutions that help businesses attract customers, manage operations and grow — from a powerful online presence to the systems behind it.</p>
         <div class="hero-ctas fade-up" style="animation-delay:.3s;">
           <a href="#demo" class="btn btn-primary" data-track="cta_click" data-track-label="hero_demo">Request a Free Demo</a>
           <a href="#contact" class="btn btn-ghost" data-track="cta_click" data-track-label="hero_start_project">Start a Project</a>
