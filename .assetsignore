@@ -1,0 +1,13 @@
+# Files used by the build system, not public website assets
+node_modules/
+.git/
+.wrangler/
+.gitignore
+.assetsignore
+package.json
+package-lock.json
+bun.lock
+wrangler.json
+wrangler.jsonc
+wrangler.toml
+*.log
