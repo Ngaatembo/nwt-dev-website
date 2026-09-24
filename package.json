@@ -1,0 +1,8 @@
+{
+  "name": "webaura-site",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "wrangler": "4.135.0"
+  }
+}
