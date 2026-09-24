@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="WebAura | Websites &amp; Digital Solutions for Businesses in Zimbabwe">
 <meta name="twitter:description" content="WebAura designs and builds business websites, landing pages, redesigns and custom digital systems for Zimbabwean businesses. Request a free demo.">
 <meta name="twitter:image" content="https://nwt-dev-website.ngaatendwew.workers.dev/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0A12%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%238B5CF6%22 font-family=%22sans-serif%22 font-weight=%22800%22>N</text></svg>">
+<link rel="icon" href="assets/webaura-logo.svg" type="image/svg+xml"><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0A12%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%238B5CF6%22 font-family=%22sans-serif%22 font-weight=%22800%22>N</text></svg>">
 <meta name="theme-color" content="#0B0A12">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"WebAura","url":"https://nwt-dev-website.ngaatendwew.workers.dev/","logo":"https://nwt-dev-website.ngaatendwew.workers.dev/assets/webaura-logo.svg","description":"Websites and digital solutions for businesses in Zimbabwe.","email":"ngaatendwew@gmail.com","telephone":"+263780511822","areaServed":"Zimbabwe","address":{"@type":"PostalAddress","addressLocality":"Marondera","addressCountry":"ZW"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -660,6 +660,117 @@
     .hero-visual::after{font-size:7px;letter-spacing:.07em}
   }
 
+
+  /* ---------- WebAura supplied logo + brand palette ---------- */
+  :root{
+    --bg:#020817;
+    --bg-elev:#061126;
+    --panel:rgba(255,255,255,.035);
+    --panel-strong:rgba(10,104,255,.09);
+    --line:rgba(83,190,255,.14);
+    --ink:#F7FBFF;
+    --ink-muted:#A8B9CC;
+    --ink-faint:#70859A;
+    --blue:#0E6BFF;
+    --violet:#173CFF;
+    --cyan:#19D9EA;
+    --grad:linear-gradient(115deg,#25E7EA 0%,#0A7BFF 52%,#193DFF 100%);
+  }
+  body{
+    background:
+      radial-gradient(circle at 78% 5%,rgba(20,111,255,.14),transparent 28rem),
+      radial-gradient(circle at 8% 34%,rgba(25,217,234,.07),transparent 30rem),
+      #020817;
+  }
+  header.nav{
+    background:rgba(2,8,23,.84);
+    border-bottom-color:rgba(25,217,234,.15);
+  }
+  .brand img{height:44px;width:150px;object-fit:contain}
+  .btn-primary{
+    background:var(--grad);
+    color:#02101B;
+    box-shadow:0 10px 30px rgba(25,217,234,.14);
+  }
+  .btn-primary:hover{box-shadow:0 14px 38px rgba(25,217,234,.25)}
+  .btn:focus-visible{outline-color:#19D9EA}
+  .hero{
+    min-height:720px;
+    background:
+      radial-gradient(circle at 72% 44%,rgba(14,107,255,.09),transparent 25rem);
+  }
+  .hero::before{
+    background:radial-gradient(circle,rgba(25,217,234,.13),rgba(14,107,255,.055) 40%,transparent 70%);
+  }
+  .hero-kicker{
+    border-color:rgba(25,217,234,.2);
+    background:rgba(25,217,234,.05);
+    color:#A5F3FA;
+  }
+  .hero-kicker::before{
+    background:#19D9EA;
+    box-shadow:0 0 14px #19D9EA;
+  }
+  .hero h1 .accent{color:#43E5EF}
+  .hero-visual{
+    border-color:rgba(25,217,234,.18);
+    background:
+      radial-gradient(circle at 50% 15%,rgba(14,107,255,.11),transparent 55%),
+      linear-gradient(145deg,rgba(255,255,255,.045),rgba(7,63,145,.045));
+    box-shadow:inset 0 1px rgba(255,255,255,.07),0 30px 90px rgba(0,0,0,.34);
+    padding:18px;
+  }
+  .hero-visual::after{display:none}
+  .hero-brand-showcase{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:390px;
+    border-radius:22px;
+    overflow:hidden;
+    background:#020817;
+  }
+  .hero-brand-showcase img{
+    width:100%;
+    max-width:680px;
+    height:auto;
+    display:block;
+  }
+  .bento .card,.p-row,.p-spotlight,.price-card,.process-step,.commitments,.faq-item,.next-panel,.proof-feature,.problem-item{
+    background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(14,107,255,.018));
+    border-color:rgba(83,190,255,.13);
+  }
+  .bento .card:hover,.p-row:hover,.p-spotlight:hover,.price-card:hover,.process-step:hover{
+    border-color:rgba(25,217,234,.34);
+    box-shadow:0 18px 45px rgba(0,0,0,.2);
+  }
+  .card-glow{background:radial-gradient(circle,rgba(25,217,234,.2),transparent 70%)}
+  .p-status-live{background:rgba(25,217,234,.11);color:#7FEFF6}
+  .price-featured{
+    border-color:rgba(25,217,234,.38);
+    box-shadow:0 18px 60px rgba(14,107,255,.09);
+  }
+  .price-badge{background:var(--grad)}
+  .demo-panel{
+    background:
+      radial-gradient(circle at 90% 0%,rgba(25,217,234,.12),transparent 32rem),
+      linear-gradient(145deg,rgba(255,255,255,.045),rgba(14,107,255,.02));
+    border-color:rgba(25,217,234,.2);
+  }
+  .contact-form input:focus,.contact-form textarea:focus{outline-color:#19D9EA}
+  .contact-panel h2{letter-spacing:-.035em}
+  footer{background:#010611;border-top-color:rgba(25,217,234,.13)}
+  .sticky-cta{background:rgba(1,6,17,.95)}
+  @media(max-width:900px){
+    .hero-brand-showcase{min-height:auto}
+  }
+  @media(max-width:640px){
+    .brand img{height:38px;width:126px}
+    .hero{padding-top:135px}
+    .hero-visual{padding:10px;border-radius:22px}
+    .hero-brand-showcase{border-radius:16px}
+  }
+
 </style>
 </head>
 <body>
@@ -699,56 +810,12 @@
         <p class="hero-contact fade-up" style="animation-delay:.36s;">Prefer to talk? <a href="https://wa.me/263780511822">WhatsApp</a> or <a href="tel:+263780511822">+263 78 051 1822</a> &nbsp;·&nbsp; Response time: under 24 hours</p>
       </div>
       <div class="hero-visual fade-up" style="animation-delay:.22s;">
-        
-<svg viewBox="0 0 520 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a central system matching two sides of a marketplace">
-  <defs>
-    <linearGradient id="heroGrad" x1="0" y1="0" x2="520" y2="440" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#4C8DFF"/>
-      <stop offset="1" stop-color="#8B5CF6"/>
-    </linearGradient>
-    <radialGradient id="hubGlow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
-  <circle cx="260" cy="220" r="95" fill="url(#hubGlow)"/>
-
-  <g stroke="url(#heroGrad)" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
-    <path class="hero-line" d="M 90 90 C 160 120, 190 150, 250 205" stroke-dasharray="6 8"/>
-    <path class="hero-line" d="M 70 220 C 140 220, 180 220, 245 220" stroke-dasharray="6 8"/>
-    <path class="hero-line" d="M 95 350 C 160 320, 190 290, 250 235" stroke-dasharray="6 8"/>
-    <path class="hero-line" d="M 275 205 C 340 150, 370 120, 430 90" stroke-dasharray="6 8"/>
-    <path class="hero-line" d="M 275 220 C 340 220, 380 220, 450 220" stroke-dasharray="6 8"/>
-    <path class="hero-line" d="M 275 235 C 340 290, 370 320, 425 350" stroke-dasharray="6 8"/>
-  </g>
-
-  <g>
-    <circle cx="90" cy="90" r="7" fill="#4C8DFF"/>
-    <circle cx="70" cy="220" r="7" fill="#4C8DFF"/>
-    <circle cx="95" cy="350" r="7" fill="#4C8DFF"/>
-    <circle cx="430" cy="90" r="7" fill="#8B5CF6"/>
-    <circle cx="450" cy="220" r="7" fill="#8B5CF6"/>
-    <circle cx="425" cy="350" r="7" fill="#8B5CF6"/>
-  </g>
-
-  <circle class="hero-hub" cx="260" cy="220" r="26" fill="#0B0A12" stroke="url(#heroGrad)" stroke-width="2.4"/>
-  <circle cx="260" cy="220" r="7" fill="url(#heroGrad)"/>
-
-  <text x="90" y="65" text-anchor="middle" fill="#A7A2BE" font-family="Inter, sans-serif" font-size="12">Customers</text>
-  <text x="440" y="65" text-anchor="middle" fill="#A7A2BE" font-family="Inter, sans-serif" font-size="12">Providers</text>
-
-  <style>
-    .hero-line{ stroke-dashoffset:120; animation:dashIn 1.6s ease forwards; animation-delay:.4s; }
-    .hero-hub{ animation:hubPulse 2.8s ease-in-out infinite; animation-delay:1.8s; transform-origin:260px 220px; }
-    @keyframes dashIn{ to{ stroke-dashoffset:0; } }
-    @keyframes hubPulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
-  </style>
-</svg>
-
-      </div>
-    </div>
-  </section>
+  <div class="hero-brand-showcase">
+    <img src="assets/webaura-logo.svg" alt="WebAura — Digital solutions that make businesses work better">
+  </div>
+</div>
+</div>
+</section>
 
   <hr class="divider">
 

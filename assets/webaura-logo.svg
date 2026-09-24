@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="WebAura"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#39d8ff"/><stop offset=".55" stop-color="#4c8dff"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="360" height="120" rx="24" fill="#0b0a12"/><path d="M35 34l15 50 18-32 18 32 15-50" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 63c34-39 91-42 99-4" fill="none" stroke="#4c8dff" stroke-width="4" stroke-linecap="round" opacity=".9"/><circle cx="124" cy="59" r="5" fill="#39d8ff"/><text x="145" y="66" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800" fill="#f4f2fa">Web<tspan fill="#4c8dff">Aura</tspan></text><text x="146" y="88" font-family="Inter,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#a7a2be">DIGITAL SOLUTIONS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-label="WebAura — Digital solutions that make businesses work better">
+  <defs>
+    <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#35e8ee"/><stop offset=".48" stop-color="#0879ff"/><stop offset="1" stop-color="#173cff"/></linearGradient>
+    <linearGradient id="wg2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#25e8ef"/><stop offset=".55" stop-color="#0874ff"/><stop offset="1" stop-color="#124cff"/></linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="760" height="360" rx="30" fill="#020817"/>
+  <path d="M205 76 C231 75 256 79 275 94 L319 128 L361 73 C378 51 410 51 426 74 L477 149 L548 71 C564 53 589 48 612 57 C631 65 641 84 637 104 C632 128 607 149 582 166 L471 241 C448 257 417 254 401 232 L355 168 L316 228 C300 252 269 260 245 245 C227 234 218 216 210 194 L174 93 C170 82 184 76 205 76 Z" fill="url(#wg)"/>
+  <path d="M214 82 C229 83 246 88 259 99 L302 133 C316 144 330 141 340 128 L368 91 C379 77 400 77 411 92 L463 167 C475 184 492 187 507 175 L579 111 C597 95 616 82 627 84" fill="none" stroke="#5cecff" stroke-width="7" stroke-linecap="round" opacity=".62"/>
+  <path d="M165 180 C232 110 319 113 382 170 C442 224 512 225 618 118" fill="none" stroke="url(#wg2)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="628" cy="84" r="6" fill="#75f6ff" filter="url(#glow)"/>
+  <text x="380" y="292" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="-2" fill="#f7fbff">Web<tspan fill="#18d9ee">Aura</tspan></text>
+  <text x="380" y="324" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="500" letter-spacing="5.2" fill="#d8e5f0">DIGITAL SOLUTIONS THAT MAKE BUSINESSES WORK BETTER</text>
+</svg>
