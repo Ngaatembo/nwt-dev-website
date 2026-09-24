@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-label="WebAura">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35e8ee"/><stop offset=".5" stop-color="#0879ff"/><stop offset="1" stop-color="#173cff"/></linearGradient></defs>
-<path d="M55 35 C77 34 97 38 113 50 L151 79 L187 33 C202 14 229 14 243 34 L287 98 L347 31 C361 15 382 12 401 20 C417 27 426 43 422 60 C418 80 398 96 377 110 L282 174 C263 187 238 184 225 165 L186 111 L153 163 C140 181 114 187 94 175 C79 166 71 150 65 131 L35 49 C31 40 42 35 55 35 Z" fill="url(#g)"/>
-<path d="M62 42 C77 43 91 48 102 57 L139 86 C151 96 163 94 172 83 L196 51 C205 39 223 39 233 52 L277 115 C287 129 302 132 315 122 L377 67 C393 53 408 42 418 44" fill="none" stroke="#5cecff" stroke-width="6" stroke-linecap="round" opacity=".65"/>
-<path d="M20 118 C78 58 150 60 204 109 C255 155 315 157 405 68" fill="none" stroke="#0879ff" stroke-width="6" stroke-linecap="round"/>
-<text x="500" y="116" font-family="Inter,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-3" fill="#f7fbff">Web<tspan fill="#18d9ee">Aura</tspan></text>
-</svg>
