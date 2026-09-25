@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "deploy": "wrangler deploy --assets . --name=webaura --compatibility-date=2026-09-22"
+    "deploy": "wrangler deploy --assets . --name=nwt-dev-website --compatibility-date=2026-09-22"
   },
   "devDependencies": {
     "wrangler": "4.135.0"
